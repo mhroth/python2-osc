@@ -92,7 +92,7 @@ class OscMessageBuilder(object):
     """
     if not self._address:
       raise BuildError('OSC addresses cannot be empty')
-    dgram = b''
+    dgram = bytearray()
     try:
       # Write the address.
       dgram += osc_types.write_string(self._address)
